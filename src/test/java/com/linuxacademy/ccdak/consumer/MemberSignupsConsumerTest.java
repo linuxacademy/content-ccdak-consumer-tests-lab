@@ -47,42 +47,21 @@ public class MemberSignupsConsumerTest {
     public void testHandleRecords_output() {
         // Verify that the testHandleRecords writes the correct data to System.out
         // A text fixture called systemOutContent has already been set up in this class to capture System.out data.
-        String topic = "member_signups";
-        ConsumerRecord<Integer, String> record = new ConsumerRecord<>(topic, 0, 1, 2, "ROSENBERG, WILLOW");
-        Map<TopicPartition, List<ConsumerRecord<Integer, String>>> records = new LinkedHashMap<>();
-        records.put(new TopicPartition(topic, 0), Arrays.asList(record));
-        ConsumerRecords<Integer, String> consumerRecords = new ConsumerRecords<>(records);
-        
-        memberSignupsConsumer.handleRecords(consumerRecords);
-        Assert.assertEquals("key=2, value=ROSENBERG, WILLOW, topic=member_signups, partition=0, offset=1\n", systemOutContent.toString());
+        throw new UnsupportedOperationException("not implemented");
     }
     
     @Test
     public void testHandleRecords_none() {
         // Verify that testHandleRecords behaves correctly when processing no records.
         // A text fixture called systemOutContent has already been set up in this class to capture System.out data.
-        String topic = "member_signups";
-        Map<TopicPartition, List<ConsumerRecord<Integer, String>>> records = new LinkedHashMap<>();
-        records.put(new TopicPartition(topic, 0), Arrays.asList());
-        ConsumerRecords<Integer, String> consumerRecords = new ConsumerRecords<>(records);
-        
-        memberSignupsConsumer.handleRecords(consumerRecords);
-        Assert.assertEquals("", systemOutContent.toString());
+        throw new UnsupportedOperationException("not implemented");
     }
     
     @Test
     public void testHandleRecords_multiple() {
         // Verify that testHandleRecords behaves correctly when processing multiple records.
         // A text fixture called systemOutContent has already been set up in this class to capture System.out data.
-        String topic = "member_signups";
-        ConsumerRecord<Integer, String> record1 = new ConsumerRecord<>(topic, 0, 1, 2, "ROSENBERG, WILLOW");
-        ConsumerRecord<Integer, String> record2 = new ConsumerRecord<>(topic, 3, 4, 5, "HARRIS, ALEXANDER");
-        Map<TopicPartition, List<ConsumerRecord<Integer, String>>> records = new LinkedHashMap<>();
-        records.put(new TopicPartition(topic, 0), Arrays.asList(record1, record2));
-        ConsumerRecords<Integer, String> consumerRecords = new ConsumerRecords<>(records);
-        
-        memberSignupsConsumer.handleRecords(consumerRecords);
-        Assert.assertEquals("key=2, value=ROSENBERG, WILLOW, topic=member_signups, partition=0, offset=1\nkey=5, value=HARRIS, ALEXANDER, topic=member_signups, partition=3, offset=4\n", systemOutContent.toString());
+        throw new UnsupportedOperationException("not implemented");
     }
     
 }
